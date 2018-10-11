@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Xiong\'s blog',
+  title: '风华正茂',
   description: '我的个人网站',
   head: [ // 注入到当前页面的 HTML <head> 中的标签
     ['link', { rel: 'icon', href: '/logo.jpg' }], // 增加一个自定义的 favicon(网页标签的图标)
@@ -11,10 +11,27 @@ module.exports = {
   themeConfig: {
     nav:[ // 导航栏配置
       {text: '前端基础', link: '/accumulate/' },
-      {text: '算法题库', link: '/algorithm/'},
-      {text: '微博', link: 'https://baidu.com'}      
+      {text: '生活随笔', link: '/live/'}     
     ],
-    sidebar: 'auto', // 侧边栏配置
-    sidebarDepth: 2, // 侧边栏显示2级
+    sidebar: {
+      '/accumulate/': [
+        {
+          title: '前端积累',
+          children: [
+            '/accumulate/know.html'
+          ]
+        }
+      ],
+      '/live/': [
+        {
+          title: '生活乐趣',
+          children: [
+            '/live/xiangshan.html',
+            '/live/baiwang.html'
+          ]
+        }
+      ],
+    }, // 侧边栏配置
+    sidebarDepth: 0, // 侧边栏显示2级
   }
 };
