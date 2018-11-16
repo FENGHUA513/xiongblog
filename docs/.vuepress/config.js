@@ -19,7 +19,7 @@ module.exports = {
           title: '前端积累',
           children: [
             '/fe/promise.html',
-            '/fe/wxshare.html'
+            '/fe/ssh.html'
           ]
         }
       ],
