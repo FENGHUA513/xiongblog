@@ -18,7 +18,8 @@ module.exports = {
         {
           title: '前端积累',
           children: [
-            '/accumulate/know.html'
+            '/fe/promise.html',
+            '/fe/wxshare.html'
           ]
         }
       ],
