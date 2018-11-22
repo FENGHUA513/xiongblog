@@ -10,16 +10,17 @@ module.exports = {
   },
   themeConfig: {
     nav:[ // 导航栏配置
-      {text: '前端基础', link: '/fe/' },
+      {text: '前端基础', link: '/fe/promise.html' },
       {text: '生活随笔', link: '/live/'}     
     ],
     sidebar: {
       '/fe/': [
         {
-          title: '前端积累',
+          title: '前端小知识',
           children: [
             '/fe/promise.html',
-            '/fe/ssh.html'
+            '/fe/ssh.html',
+            '/fe/this.html'
           ]
         }
       ],
