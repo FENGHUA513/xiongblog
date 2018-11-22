@@ -114,6 +114,34 @@ func();
 ---
 
 作为对象的一个函数调用：
+
+```
+var obj = {
+    name: 'hh',
+    func: function () {
+       console.log(this);
+    }
+}
+obj.func();
+// obj
+```
+
+```
+var obj = {
+    name: 'hh',
+    func: () => {
+       console.log(this);
+    }
+}
+obj.func();
+// Window
+```
+
+不难发现，普通函数作为对象的一个函数被调用，this 指向 obj，箭头函数作为对象的一个函数被调用，this 指向 Window。
+
+---
+
+特殊情况：结合定时器调用：
 ```
 var obj = {
     name: 'hh',
@@ -139,7 +167,8 @@ var obj = {
 obj.func();
 // obj
 ```
-不难发现，普通函数作为对象的一个函数被调用，this 指向 Window，箭头函数作为对象的一个函数被调用，this 指向定义时所在的对象，也就是 func 中的 this，即 obj。
+若在对象的函数中，普通函数作为定时器延时执行的函数调用，this 指向 Window；箭头函数作为定时器延时执行的函数调用， this 指向定义时所在的对象，也就是 func 中的 this，即 obj。
+
 
 >箭头函数中 this 的值取决于该函数外部非箭头函数的 this 的值，且不能通过 call() 、 apply() 和 bind() 方法来改变 this 的值。
 
@@ -332,26 +361,12 @@ obj.func2();
 ```
 
 call、apply、bind 都能改变 this 的上下文对象，所以也没有报错，可以正常执行。
+
 具体原因可看上述第七点，call、apply、bind。
-
-
-如果第一个参数为null,则this指向window(在node环境中则指向global)
-```
-var a ="windowA";
-    var b = "windowB";
-    var str = "str";
-    var myObject = {a:"myA",b:"myB"};
-    function hello(s){
-        alert("a= "+this.a + ", b= "+this.b+" "+s);
-    }
-    hello.call(null,str);//a ="windowA" b = "windowB" str
-    hello.call(myObject,str);//a="myA" b="myB" str
-```
-
-
 
 ### 4. new 实例化一个对象
 如上：第四点，作为一个构造函数使用。
+
 
 参考文章：
 [秒懂this](https://segmentfault.com/a/1190000017075730)
