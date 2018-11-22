@@ -335,7 +335,7 @@ call、apply、bind 都能改变 this 的上下文对象，所以也没有报错
 具体原因可看上述第七点，call、apply、bind。
 
 
-* call/apply是用来改变函数的作用域的，第一次参数为this,第二个参数为传输的值，例如：
+如果第一个参数为null,则this指向window(在node环境中则指向global)
 ```
 var a ="windowA";
     var b = "windowB";
@@ -347,7 +347,7 @@ var a ="windowA";
     hello.call(null,str);//a ="windowA" b = "windowB" str
     hello.call(myObject,str);//a="myA" b="myB" str
 ```
-如果第一个参数为null,则this指向window(在node环境中则指向global)
+
 
 
 ### 4. new 实例化一个对象
