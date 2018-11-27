@@ -20,7 +20,8 @@ module.exports = {
           children: [
             '/fe/promise.html',
             '/fe/ssh.html',
-            '/fe/this.html'
+            '/fe/this.html',
+            '/fe/authorize.html'
           ]
         }
       ],
