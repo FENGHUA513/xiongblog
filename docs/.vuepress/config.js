@@ -21,7 +21,8 @@ module.exports = {
             '/fe/promise.html',
             '/fe/ssh.html',
             '/fe/this.html',
-            '/fe/authorize.html'
+            '/fe/authorize.html',
+            '/fe/ts.html'
           ]
         }
       ],
