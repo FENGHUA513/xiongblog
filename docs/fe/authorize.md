@@ -7,7 +7,7 @@ appid    公众号唯一标识
 ## 1、用户同意授权，获取code
 
 
-> https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx93f7ba2b40b1a344&redirect_uri=https%3A%2F%2Fm.mobike.com%2Fh5%2Ftest%2Fzh%2Findex.html&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirec
+> https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx93f7ba2b40b1a344&redirect_uri=https%3A%2F%2Fm.mobike.com%2Fh5%2Ftrack%2Fzh%2Findex.html%23%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirec
 
 <img style=" width: 400px; height: 400px;" src="/images/WechatIMG220.png">
 
