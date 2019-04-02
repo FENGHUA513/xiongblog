@@ -22,7 +22,8 @@ module.exports = {
             '/fe/ssh.html',
             '/fe/this.html',
             '/fe/authorize.html',
-            '/fe/topic.html'
+            '/fe/topic.html',
+            '/fe/ts.html'
           ]
         }
       ],
