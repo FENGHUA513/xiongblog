@@ -77,14 +77,14 @@ function deepcopy (obj) {
 	return result
 }
 ```
-##柯里化 curry
+## 柯里化 curry
 ```js
 // 柯里化
 add(1,2,3)
 var addCurry = curry(add)
 addCurry(1, 2, 3)
 addCurry(1, 2)(3)
-addCurry(1)(2)(3) // 3
+addCurry(1)(2)(3)
 ```
 
 ```js
