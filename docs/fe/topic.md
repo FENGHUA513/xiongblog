@@ -14,7 +14,7 @@ function F () {
 }
 var f = New (F)
 console.log(f.name) // meili
-console.log(f.sayHellow) // hellow
+f.sayHellow() // hellow
 
 
 ```
@@ -75,5 +75,29 @@ function deepcopy (obj) {
 		result = obj
 	}
 	return result
+}
+```
+##柯里化 curry
+```js
+// 柯里化
+add(1,2,3)
+var addCurry = curry(add)
+addCurry(1, 2, 3)
+addCurry(1, 2)(3)
+addCurry(1)(2)(3) // 3
+```
+
+```js
+function curry (fn, args) {
+    var length = fn.length
+    var args = args || []
+    return function (..._args) {
+        _args = args.concat(_args)
+        if (_args.length < length) {
+            return curry.call(this, fn, _args)
+        } else {
+            return fn.apply(this, _args)
+        }
+    }
 }
 ```
