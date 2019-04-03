@@ -22,6 +22,9 @@ console.log(f.sayHellow) // hellow
 
 ```js
 Function.prototype.call2 = function(context = window) {
+	if (typeof(this) !== 'function') {
+		throw new TypeError('error')
+	}
 	context.fn = this
 	var args = [...arguments].slice(1)
 	var result = context.fn(...args)
@@ -33,12 +36,43 @@ Function.prototype.call2 = function(context = window) {
 
 ```js
 Function.prototype.apply2 = function(context = window) {
+	if (typeof(this) !== 'function') {
+		throw new TypeError('error')
+	}
 	context.fn = this
 	let result
 	if (arguments[1]){
 		result = context.fn(...arguments[1])
 	} else {
 		result = context.fn()
+	}
+	return result
+}
+```
+## 实现bind
+```js
+Function.prototype.bind2 = function(context = window) {
+	if (typeof(this) !== 'function') {
+		throw new TypeError('error')
+	}
+	var that = this // this指调用bind的函数 
+	var args = [...arguments].slice(1) // bind参数
+	return function() {
+		that.apply(context, args.concat([...arguments]))
+	}
+}
+```
+## 实现深度拷贝
+```js
+function deepcopy (obj) {
+	var result;
+	if (typeof(obj) == 'object') {
+		result = obj.constructor == Array ? [] : {}
+		for (let i in obj) {
+			result[i] = typeof(obj[i]) == 'object' ? deepcopy(obj[i]) : obj[i]
+		}
+	} else {
+		result = obj
 	}
 	return result
 }
