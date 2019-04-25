@@ -23,7 +23,8 @@ module.exports = {
             '/fe/this.html',
             '/fe/authorize.html',
             '/fe/topic.html',
-            '/fe/ts.html'
+            '/fe/ts.html',
+            '/fe/promisepolyfill.html'
           ]
         }
       ],
