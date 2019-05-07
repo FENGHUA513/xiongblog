@@ -28,7 +28,7 @@ Function.prototype.call2 = function(context = window) {
 	context.fn = this
 	var args = [...arguments].slice(1)
 	var result = context.fn(...args)
-	delete concontexttent.fn
+	delete context.fn
 	return result
 }
 ```
