@@ -101,3 +101,33 @@ function curry (fn, args) {
     }
 }
 ```
+## 防抖：函数触发后一段之后再执行，触发多次的话，以最后一次触发为准
+
+```js
+function debounce (fn, n) {
+   var timeout
+   return function () {
+     if (timeout) {
+      clearTimeout(timeout)
+     }
+     timeout = setTimeout(() => {
+       fn.apply(this, arguments)
+     }, n)
+   }
+}
+```
+## 截流：函数每隔一段时间执行一次
+
+```js
+ 时间戳的形式
+function throttle (fn, n) {
+   var previous = 0
+   return function () {
+     var now = +new Date()
+     if (now - previous > n) {
+        fn.apply(this, arguments)
+        previous = now
+     }
+   }
+}
+```
