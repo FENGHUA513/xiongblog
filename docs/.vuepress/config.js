@@ -24,7 +24,8 @@ module.exports = {
             '/fe/authorize.html',
             '/fe/topic.html',
             '/fe/ts.html',
-            '/fe/promisepolyfill.html'
+            '/fe/promisepolyfill.html',
+            '/fe/curry.html'
           ]
         }
       ],
