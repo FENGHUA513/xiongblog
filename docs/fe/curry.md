@@ -142,7 +142,7 @@ var result1 = post('www.test.com1'); 等价于  var result1 = ajaxCurry("POST")(
 ```js
 // 实现一个 add 方法，使计算结果能够满足如下预期：
 add(1)(2)(3) = 6;
-add(1, 2, 3)(4) = 10;
+add(1)(2)(3)(4) = 10;
 add(1)(2)(3)(4)(5) = 15;
 
 // 根据柯里化函数的特性（参数收集）结合 reduce 方法实现
